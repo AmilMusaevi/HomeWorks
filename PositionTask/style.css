@@ -1,0 +1,84 @@
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;;
+}
+span{
+    font-size: 10px;
+    color: #353538; ;
+    
+}
+hr{
+    margin-top: 10px;
+    width: 250px;
+}
+h3{
+    font-size: 15px;
+}
+.form-parent{
+    width: 800px;
+    height:550px;
+    background-color: #ededee;
+    border-radius: 10px;
+    margin:50px;
+    position: relative;
+
+}
+.circle1{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color:#F161A3;
+    position: absolute;
+    left: 80px;
+}
+.circle2{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color: #FA7C64;
+    position: absolute;
+    right:30px;
+    bottom: 10px;
+
+}
+.form{
+    background-color: white;
+    border-radius: 10px;
+    width: 300px;
+    height:400px;
+    position: relative;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+.form_container{
+    margin:30px 0 0 20px;
+}
+.events-title{
+    padding-top: 40px;
+    font-size: 20px;   
+}
+.front-title{
+    margin-top:30px;
+}
+.btn-container{
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.btn{
+    width: 220px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e9696f;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.btn-text{
+    color: white;
+    font-size: 15px;
+}
