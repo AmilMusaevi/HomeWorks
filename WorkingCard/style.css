@@ -1,0 +1,105 @@
+  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  :root {
+      --main-color: #4666D7;
+      --accent-color: #2143BE;
+  }
+
+  .main-container {
+      height: 600px;
+      width: 100%;
+      background-color: #F3F8FE;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .card-container {
+      width: 890px;
+      height: 340px;
+      background-color: #DDE5F9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      position: relative;
+  }
+
+  .card {
+      width: 850px;
+      height: 300px;
+      background-image: linear-gradient(to right,
+              var(--main-color), var(--accent-color));
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .card-text {
+      color: white;
+      text-align: center;
+      font-family: 'Nunito Sans', sans-serif;
+      width: 380px;
+      position: relative;
+  }
+
+  .card-text-paragraph {
+      font-size: 16px;
+      margin: 10px 40px 0 40px;
+  }
+
+  .card-text-input {
+      width: 100%;
+      padding: 20px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.808);
+      background-color: #7C92DC;
+      margin-top: 15px;
+      outline: none;
+      color: white;
+  }
+
+  .card-text-input::placeholder {
+      color: rgba(255, 255, 255, 0.63);
+      font-size: 15px;
+  }
+
+  .input-icon {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      border: 1px solid white;
+      color: rgba(0, 0, 0, 0.527);
+      border-radius: 50%;
+      background-color: white;
+      padding: 12px;
+      cursor: pointer;
+  }
+
+  .card-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 8px solid white;
+      margin-right: 30px;
+      cursor: pointer;
+  }
+
+  .card-image:hover {
+      transform: rotate(360deg);
+      transition: 2s;
+  }
+
+  .image-container {
+      position: absolute;
+      display: flex;
+      bottom: -50px
+  }
