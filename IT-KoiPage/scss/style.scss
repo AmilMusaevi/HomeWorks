@@ -1,0 +1,256 @@
+@import './mixins';
+@import './variables';
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    margin: 0 45px;
+    padding: 0 45px;
+}
+
+// HEADER STARTED
+.header{
+    width: 100%;
+    height: 80px;
+    background:linear-gradient(
+        to right,
+        $primary-color,
+        $secondary-color
+    );
+    font-family: 'Josefin Sans', sans-serif;
+}
+.header_container{
+    @include d-flex(flex,space-between,center);
+    padding-top: 20px
+} 
+.header_logo_menu_container{
+    @include d-flex(flex,_,center)
+}
+.header_logo_container{
+    @include d-flex(flex,_,center);
+    cursor: pointer;
+     
+
+    &_text{
+        color:$text-color;
+       margin: 0 10px;
+    }
+}
+.header_menu{
+    @include d-flex(flex,_,center);
+    margin-left: 80px;    
+    &_item{
+        list-style:none;
+        color: $text-color;
+        margin-right: 40px;
+        font-size: 15px;
+        cursor: pointer;
+       &_link{
+        text-decoration: none;
+        position: relative;
+        color: $text-color
+       }
+         &_link::before{
+              content: "";
+              position: absolute;
+              width: 0%;
+              height: 3px;
+              background-color: $bg-color;
+              bottom: -10px;
+              border-radius: 10px;
+              left: 0;
+              transition: all 0.5s;
+         }
+         &_link:hover::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: $bg-color;
+            border-radius: 10px;
+            bottom: -10px;
+            left: 0;
+            transition: all .5s;
+            transition-timing-function: linear;
+         }
+    }
+}
+.header_button_container{
+   margin-right: 20px;
+   width: 160px;
+   position: relative;
+   z-index: 1;
+    &::before{
+        content: "";
+        position: absolute;
+        height: 0px;
+        width: 100%;
+        background-color: $bg-color;
+        top: 2px;
+        left: 0;
+        border-radius: 30px;
+        z-index:-1;
+        transition: all .3s;
+       }
+       &:hover::before{
+            content: "";
+            position: absolute;
+            height: 50px;
+            width: 100%;
+            background-color: $bg-color;
+            top: 2px;
+            left: 0;
+            border-radius: 30px;
+            z-index: -1; 
+            transition: all .3s;
+            transition-timing-function: ease-in-out;
+       }
+   }
+
+
+    .header_button{
+       border: 2px solid $bg-color;
+       padding: 15px;
+       border-radius:30px;
+       width: 100%;
+       background: none;
+       cursor: pointer;
+       color:$text-color;
+       align-items: center;
+       font-size: 15px;
+       font-weight: 700;
+       letter-spacing: 1px;
+    
+   &:hover{
+       color: palevioletred;
+       transition: .3s;
+
+    }
+}
+//    HEADER ENDED
+
+// MAIN SECTION HOME STARTED
+.main_section_home_container{
+    width: 100%;
+    height: 620px;
+    background: linear-gradient(
+        to right,
+        $primary-color,
+        $secondary-color
+    );
+   padding-top: 50px;
+}
+.main_section_home{
+    @include d-flex(flex,_,center);
+    position: relative;
+    
+}
+
+.main_section_home_img{
+    width: 1000px;
+    height: 559px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+ }
+
+.main_section_home_text{
+    color:$text-color;
+    width: 500px;
+    font-family: 'Josefin Sans', sans-serif;
+    
+    &_title{
+     font-size: 60px;
+    margin-top: 60px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    line-height: 1.3;
+    
+ }
+ &_paragraph{
+    margin-top: 10px;
+    font-size:18px;
+    line-height: 1.7;
+    font-weight:100;
+ }
+ &_button{
+    cursor: pointer;
+    color: $text-color;
+    margin-top: 30px;
+    padding: 15px;
+    width: 150px;
+    border-radius: 30px;
+    border: none;
+    background:linear-gradient(
+        to bottom,
+        #FF4792,
+        #FF6C6D
+    );
+
+    font-size: 15px;
+    font-weight: bold;
+    &:hover{
+        background:linear-gradient(
+            to bottom,
+            #FF6C6D,
+            #FF4792,
+            );
+            transition:5s;
+        }
+}
+}
+
+// MAIN SECTION HOME ENDED
+
+// MAIN SECTION SERVICES STARTED
+.main_section_services_container{
+    background-color: $bg-color;
+    width: 100%;
+}
+.main_section_services{
+    margin-top: 60px;
+    font-family: 'Josefin Sans', sans-serif;
+    &_title{
+        padding-top: 40px;
+        text-align: center;
+        width: 450px;
+        margin: auto;
+
+        &_first_text{
+            color: $servicesfrst-text-color;
+            font-size: 15px;
+            font-weight: 600;
+            
+        }
+        &_second_text{
+          margin-top: 30px;
+          color: $servicesscnd-text-color;
+          font-size:40px;
+        }
+    }
+    &_cards{
+        width: 100%;
+        @include d-flex(flex,center,_,);
+        flex-wrap: wrap;
+        margin-top: 70px;
+    }
+    &_card{
+        margin-top: 50px;
+        width: 350px;
+        margin-left: 30px;
+        text-align: center;
+        margin: auto;
+        &_img{
+            @include d-flex(flex,center,_);
+            border: 1px solid white;
+            border-radius: 50%;
+            width: 100px;
+            padding: 10px;
+            background-color: aqua;
+        }
+    }
+}

@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  margin: 0 45px;
+  padding: 0 45px;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to right, #00095D, #0B0C1F);
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.header_logo_menu_container {
+  display: flex;
+  justify-content: _;
+  align-items: center;
+}
+
+.header_logo_container {
+  display: flex;
+  justify-content: _;
+  align-items: center;
+  cursor: pointer;
+}
+.header_logo_container_text {
+  color: white;
+  margin: 0 10px;
+}
+
+.header_menu {
+  display: flex;
+  justify-content: _;
+  align-items: center;
+  margin-left: 80px;
+}
+.header_menu_item {
+  list-style: none;
+  color: white;
+  margin-right: 40px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.header_menu_item_link {
+  text-decoration: none;
+  position: relative;
+  color: white;
+}
+.header_menu_item_link::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background-color: white;
+  bottom: -10px;
+  border-radius: 10px;
+  left: 0;
+  transition: all 0.5s;
+}
+.header_menu_item_link:hover::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 10px;
+  bottom: -10px;
+  left: 0;
+  transition: all 0.5s;
+  transition-timing-function: linear;
+}
+
+.header_button_container {
+  margin-right: 20px;
+  width: 160px;
+  position: relative;
+  z-index: 1;
+}
+.header_button_container::before {
+  content: "";
+  position: absolute;
+  height: 0px;
+  width: 100%;
+  background-color: white;
+  top: 2px;
+  left: 0;
+  border-radius: 30px;
+  z-index: -1;
+  transition: all 0.3s;
+}
+.header_button_container:hover::before {
+  content: "";
+  position: absolute;
+  height: 50px;
+  width: 100%;
+  background-color: white;
+  top: 2px;
+  left: 0;
+  border-radius: 30px;
+  z-index: -1;
+  transition: all 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.header_button {
+  border: 2px solid white;
+  padding: 15px;
+  border-radius: 30px;
+  width: 100%;
+  background: none;
+  cursor: pointer;
+  color: white;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.header_button:hover {
+  color: palevioletred;
+  transition: 0.3s;
+}
+
+.main_section_home_container {
+  width: 100%;
+  height: 620px;
+  background: linear-gradient(to right, #00095D, #0B0C1F);
+  padding-top: 50px;
+}
+
+.main_section_home {
+  display: flex;
+  justify-content: _;
+  align-items: center;
+  position: relative;
+}
+
+.main_section_home_img {
+  width: 1000px;
+  height: 559px;
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.main_section_home_text {
+  color: white;
+  width: 500px;
+  font-family: "Josefin Sans", sans-serif;
+}
+.main_section_home_text_title {
+  font-size: 60px;
+  margin-top: 60px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.main_section_home_text_paragraph {
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 100;
+}
+.main_section_home_text_button {
+  cursor: pointer;
+  color: white;
+  margin-top: 30px;
+  padding: 15px;
+  width: 150px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(to bottom, #FF4792, #FF6C6D);
+  font-size: 15px;
+  font-weight: bold;
+}
+.main_section_home_text_button:hover {
+  background: linear-gradient(to bottom, #FF6C6D, #FF4792);
+  transition: 5s;
+}
+
+.main_section_services_container {
+  background-color: white;
+  width: 100%;
+}
+
+.main_section_services {
+  margin-top: 60px;
+  font-family: "Josefin Sans", sans-serif;
+}
+.main_section_services_title {
+  padding-top: 40px;
+  text-align: center;
+  width: 450px;
+  margin: auto;
+}
+.main_section_services_title_first_text {
+  color: #fc407f;
+  font-size: 15px;
+  font-weight: 600;
+}
+.main_section_services_title_second_text {
+  margin-top: 30px;
+  color: #151f3f;
+  font-size: 40px;
+}
+.main_section_services_cards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: _;
+  flex-wrap: wrap;
+  margin-top: 70px;
+}
+.main_section_services_card {
+  margin-top: 50px;
+  width: 350px;
+  margin-left: 30px;
+  text-align: center;
+  margin: auto;
+}
+.main_section_services_card_img {
+  display: flex;
+  justify-content: center;
+  align-items: _;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 100px;
+  padding: 10px;
+  background-color: aqua;
+}/*# sourceMappingURL=style.css.map */
