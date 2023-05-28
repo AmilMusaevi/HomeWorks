@@ -1,0 +1,1590 @@
+@import '_mixins.scss';
+@import '_variables';
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;1000&display=swap');
+*{
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    margin: 0 5%;
+    padding: 0 5%;
+}
+// HEADER STARTED
+.header_container{
+    width: 100%;
+    background: $bg-color;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header{
+    max-width: 100%;
+    @include d-flex(flex,space-between,center);
+    padding-top: 1.5rem;
+    &_logo{
+        padding-bottom: 25px;
+        width: 150px;
+        cursor: pointer;
+        & img{
+            max-width: 100%;
+            
+        }
+    }
+    &_nav{
+        display: block;
+    }
+    &_nav_menu{
+        @include d-flex(flex,_,center);
+        list-style: none;
+        gap: 2rem;
+        &_item{
+            cursor: pointer;
+            position: relative;
+            padding-bottom: 1.5rem;
+            &:hover{
+              color: blue;
+            }
+            &_link{
+                text-decoration: none;
+                font-size: 1.2rem;
+                color: $text-color;
+                padding-bottom: 1.875rem;
+                &:hover{
+                    color: blue;
+                    
+                  }
+            }
+            &:nth-child(5){
+                &:hover .drop_down_menu{
+                  display: block;
+                }
+            }
+                
+                &:nth-child(6){
+                    &:hover .drop_down_menu{
+                      display: block;
+                    }
+            }
+            &:nth-child(6):hover::before{
+                content: "";
+                background-color: rgb(93, 54, 236);
+                width: 175px;
+                height: 2px;
+                position: absolute;
+                bottom: -15px;
+                left: -45px;
+                border-radius:10px;
+                z-index: 88;
+              };
+            &:nth-child(5):hover::before{
+              content: "";
+              background-color: rgb(93, 54, 236);
+              width: 180px;
+              height: 2px;
+              position: absolute;
+              bottom: -15px;
+              left: -45px;
+              border-radius:10px;
+              z-index: 88;
+            };
+        }
+    }
+
+}
+.drop_down_menu{
+    display: none;
+    list-style: none;
+    position: absolute;
+    width: 180px;
+    bottom: -69px;
+    left: -45px;
+    border: 1px solid white;
+    border-radius: 2px;
+    background-color:$bg-color;
+    text-decoration: none;
+    color: white;
+    border: none;
+    padding: .6rem;
+    padding-top: 2rem;
+    transition: .5s;
+    z-index: 1;
+    &_blog{
+        position: absolute;
+        width: 180px;
+        bottom: -103px;
+        left: -45px;
+    }
+
+    & li{
+               font-size: .9rem;
+                color: $text-color;
+                padding: .6rem;
+                &:hover{
+                    background-color: $bg-color-btn-home;
+                }
+                &:hover a{
+                   color: $text-color-main;
+                }
+                & a{
+                    text-decoration: none;
+                    color:$text-color;
+                }
+    }
+}
+.icon_menu{
+    display: none;
+    & i{
+        font-size: 2rem;
+        color: rgb(0, 0, 163);
+    }
+}
+// laptop design header
+@media only screen and (min-width:992px) and (max-width:1250px) {
+    html,body{
+        font-size: 16px;
+    }
+    .header{
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header_nav_menu{
+        gap: 1rem;
+    }
+    .header_nav_menu_item_link{
+        font-size: 1.1rem;
+    }
+}
+
+// tablet design header
+@media only screen and (min-width:769px) and (max-width:992px){
+    html,body{
+        font-size: 15px;
+    }
+    .header_logo img{
+        width: 120px;
+    }
+    .header_nav_menu{
+        gap: .8rem;
+    }
+    .wrapper{
+        margin: 0 1rem;
+        padding: 0 1rem;
+    }
+}
+// mobile design header
+@media only screen and (max-width:768px) {
+    html,body{
+        font-size: 12px;
+    }
+    .header_nav{
+        display: none;
+    }
+    .icon_menu{
+        display: block;
+    }
+    .header_logo{
+        padding: 0;
+          & img{
+           width: 120px;
+       }
+    }
+    .wrapper{
+        margin: 0 .5rem;
+        padding: 0 .5rem;
+    }
+}
+
+
+// HEADER FINISHED
+
+// MAIN SECTION HOME STARTED
+.main_section_home_container{
+    width: 100%;
+}
+
+.main_section_home{
+    font-family: 'Josefin Sans', sans-serif;
+    background-image: url(main_section_home_img.jpg);
+    background-size:cover;
+    width: 100%;
+    min-height: 650px;
+    position: relative;
+    display: flex;
+    &::before{
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.452);
+        position: absolute;
+        top: 0;
+        left: 0;
+       }
+   &_text{
+       text-align: center;
+       margin: auto;
+      display: block;
+      z-index: 1;
+      font-family:'Nunito', sans-serif;
+      width: 50%;
+       &_frst_line{
+        color:white;
+        font-size:1.6rem;
+        font-weight: 300;
+        margin-top: 1.2rem;
+        margin-bottom: 1.2rem;
+       }
+
+       &_title{
+        color:white;
+        font-size: 3.6rem;
+        font-weight: bolder;
+        margin-bottom: 2.5rem;
+       }
+       &_btn{
+        max-width: 200px;
+        padding: 1.1rem;
+        color: white;
+        background-color: $bg-color-btn-home;
+        border: none;
+        border-radius: 5px;
+        border: 2px solid $bg-color-btn-home;
+        transition: .5s;
+        cursor: pointer;
+        &:hover{
+         background-color:transparent;
+         border: 2px solid white;
+         transition: .5s;
+        }
+       }
+   }
+   &_arrow_icon_container{
+    position: absolute;
+    top: 50%;
+    right:2rem;
+    
+   }
+   &_arrows{
+    color: $bg-color-btn-home;
+    transition: .5s;
+    }
+}
+.arrow_cntn{
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    @include d-flex(flex,center,center);
+    margin-bottom: 1.2rem;
+    transition: .5s;
+    &:hover{
+        background: $bg-color-btn-home;
+        transition: .5s;
+    }
+    &:hover .main_section_home_arrows{
+       color: white;
+       transition: .5s;
+    }
+ }
+
+ // tablet design main section home
+@media only screen and (min-width:769px) and (max-width:992px){
+
+
+}
+// mobile design main section home
+@media only screen and (max-width:768px) {
+
+  .arrow_cntn{
+    display: none;
+  }
+  .body_icon{
+    display: none;
+}
+}
+
+// MAIN SECTION Home ENDED
+
+
+// MAIN SECTION Activity STARTED 
+
+.main_section_activity_container{
+width: 100%;
+background-color: $bg-color;
+padding-top: 5.2rem;
+padding-bottom:3.1rem;
+font-family: 'Josefin Sans', sans-serif;
+}
+
+.main_section_activity{
+    max-width: 100%;
+    @include d-flex(flex,space-between,_);
+    &_img{
+        width: 55%;
+        position: relative;
+        height: max-content;
+        & img{
+            max-width: 100%;
+            box-shadow: 18px 18px 26px 0 rgba(0,1,1,.2);
+            display: block;
+        }
+        &_btn{
+            width: 5rem;
+            height:5rem;
+            background-color: $bg-color-btn-home;
+            border-radius: 50%;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50% -50%);
+            @include d-flex(flex,center,center);
+            transition: .5s;
+            cursor:pointer;
+            &:hover{
+                background-color: rgb(9, 0, 32);
+                transition: .5s;
+            }
+            &_item{
+                font-size: 2.5rem;
+                color: $text-color-main;
+            }
+        }
+
+
+    }
+    &_cards{
+        display: flex;
+        width: 60%;
+        gap: 2rem;
+        flex-wrap: wrap;
+        &_item{
+            max-width:40%;
+            &_icon{
+                 color: $bg-color-btn-home;
+                 font-size: 3rem;
+                 margin-bottom:1.4rem;
+                //  padding-left: 10px;
+            }
+            &_title{
+                color:$text-color-activty-card;
+                font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+            &_text{
+                color:$text-color-activty-card;
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            
+        }
+    }
+}
+
+
+ // tablet design main section Activity
+ @media only screen and (min-width:769px) and (max-width:992px){
+.main_section_activity{
+    flex-wrap: wrap;
+    &_img{
+        margin: 0;
+        width: 100%;
+    }
+    &_cards{
+        width: 100%;
+        margin-bottom: 1.5rem;
+        &_item{
+            max-width: 45%;
+        }
+    }
+}
+}
+
+// mobile design main section Activity
+@media only screen and (max-width:768px) {
+    .main_section_activity{
+        flex-wrap: wrap;
+        align-items: center;
+        &_cards{
+            width: 100%;
+            margin-bottom: 20px;
+            &_item{
+                max-width: 100%;
+            }
+}
+&_img{
+    margin:0;
+    width: 100%;
+}
+}
+.body_icon{
+    display: none;
+}
+}
+
+// MAIN SECTION Activity ENDED
+
+// MAIN SECTION Destinations STARTED
+
+.main_section_destinations_container{
+    width: 100%;
+    background: $bg-color;
+    padding-top: 50px;
+}
+.main_section_destinations{
+    max-width: 100%;
+    position: relative;
+    &_text{
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        &_bg{
+            position: absolute;
+            font-size: 4rem;
+            z-index: -1;
+            opacity: .1;
+            font-family: 'Lilita One', cursive;
+            letter-spacing: 2px;
+            transform: translateX(-50%);
+        }
+        &_frst_title{
+            color: $bg-color-btn-home;
+            margin-bottom: .8rem;
+            padding-top: .5rem;
+        }
+        &_scnd_title{
+            font-weight: 500;
+            color: $text-color-activty-card;
+        }
+    }
+    &_cards{
+        width: 100%;
+        @include d-flex(flex,_,center);
+        padding-top: 50px;
+        gap: 3rem;
+        &_item{
+            position: relative;
+              &_img{
+               max-height: 400px;
+               overflow: hidden;
+               & img{
+                width: 100%;
+                display: block;
+                z-index: -1;
+                border-radius: 5px;
+                 }
+              }
+              &_text{
+                position: absolute;
+                background-color:$bg-color;
+                top: 72%;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                padding: 2rem 1rem .8rem 1.2rem;
+                z-index: 100;
+                border: 1px solid rgba(0, 0, 0, 0.219);
+                border-top: none;
+                        &_title{
+                            color: $text-color-activty-card;
+                            font-size: 1rem;
+                      }
+                      &_price{
+                        color: rgba(0, 0, 0, 0.356);
+                        font-size: 1rem;
+                        margin-right: 8px;
+                      }
+                      &_footer{
+                        color: rgba(0, 0, 0, 0.356);
+                        margin: 15px 0;
+                      }
+                      &_cntn{
+                        display: flex;
+                        justify-content: space-between;
+                      }
+
+              }
+
+    }
+}
+.arrow_destinations{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: $bg-color-btn-home;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    z-index: 10;
+    cursor: pointer;
+    & i{
+        color: $text-color-main;
+    }
+}
+.right_arrow{
+    position: absolute;
+    top: 40%;
+    right:-80px
+}
+.left_arrow{
+    position: absolute;
+    top: 40%;
+    left:-80px
+}
+}
+ // tablet design main section Destinations
+ @media only screen and (min-width:769px) and (max-width:992px){
+    .main_section_destinations_cards{
+          display: block;
+          &_item{
+            max-width: 100%;
+            &_img{
+                max-height: 800px;
+                overflow: hidden;
+            }
+          }
+          &_item_text{
+            top: 85%;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                &_title{
+                    font-size: 1.8rem;
+                }
+                &_price{
+                     font-size: 1.8rem;
+                }
+                &_footer{
+                    font-size: 1.5rem;
+                }
+          }
+    }
+.arrow_destinations{
+display: none !important;
+}
+.resp{
+    display: none;
+}
+ }
+
+// mobile design main section Destinations
+@media only screen and (max-width:768px) {
+    
+    .main_section_destinations_cards_item{
+        max-height: 500px;
+        overflow: hidden;
+        &_text{
+            top: 75%;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                &_title{
+                    font-size: 1.8rem;
+                }
+                &_price{
+                     font-size: 1.8rem;
+                }
+                &_footer{
+                    font-size: 1.5rem;
+                }
+          }
+        &_img{
+            max-height: 800px;
+            overflow: hidden;
+        }
+
+    }
+    .resp{
+        display: none;
+    }
+    .arrow_destinations{
+        display: none !important;
+        }
+        .body_icon{
+            display: none;
+        }
+    }
+
+
+    // MAIN SECTION Services STARTED
+
+    .main_section_services_container{
+        width: 100%;
+        padding-top: 120px;
+    }
+    .main_section_services{
+        background: $bg-color;
+        &_text{
+            padding-bottom: 40px;
+        }
+        &_cards{
+            @include d-flex(flex,center,center);
+            width: 100%;
+            flex-wrap: wrap;
+            padding-bottom: 40px;
+            gap: 3rem;
+            &_item{
+                @include d-flex(flex,_,_);
+                max-width:30%;
+                height: max-content;
+                padding: 2rem;
+                background: #F4F9FF;
+                &_icon{
+                    color:$bg-color-btn-home;
+                    font-size: 35px;
+                    margin-right: 1.5rem;
+                }
+                &_text{
+                    &_title{
+                        color: $text-color-activty-card;
+                        font-size: 1.3rem;
+                        font-weight: 600;
+                        margin-bottom: .5rem;
+                    }
+                    &_prgrph{
+                        color: $text-color-activty-card;
+                        font-size: 1rem;
+                        line-height: 1.5;
+                    }
+
+                    }
+                }
+            }
+        }
+
+        // tablet design main section Services 
+    @media only screen and (min-width:769px) and (max-width:992px) {
+        .main_section_services_cards_item{
+            max-width: 45%;
+        }
+
+    }
+        // mobile design main section Services 
+        @media only screen and (max-width:768px){
+            .main_section_services_cards_item{
+                max-width: 100%;
+                margin-bottom: 2rem;
+            }
+            .body_icon{
+                display: none;
+            }
+        }
+
+
+// MAIN SECTION Tour STARTED
+
+        .main_section_tour_container{
+              width: 100%; 
+              padding-top: 40px;
+        }
+        .main_section_tour{
+            background: $bg-color;
+            &_text{
+                padding-bottom: 3.2rem;
+            }
+            &_cards{
+                width: 100%;
+                @include d-flex(flex,space-between,center);
+                flex-wrap: wrap;
+                gap: 1.8rem;
+                padding-bottom: 50px;
+                &_item{
+                    max-height: 380px;
+                    overflow: hidden;
+                    max-width: 30%;
+                    position: relative;
+                    cursor: pointer;
+                    & img {
+                        max-height: max-content;
+                        display: block;
+                        max-width: 100%;
+                    }
+                    &_text{
+                        width: 180px;
+                        position: absolute;
+                        top:70%;
+                        left: 50%;
+                        font-size: 1.3rem;
+                        transform: translateX(-50%);
+                        text-align: center;
+                        color: $text-color-main;
+                        font-weight: 400;
+                        transition: .5s;
+                        opacity: 0;
+                        z-index: -2;
+                    }
+                    &_icon{
+                        width: 2.8rem;
+                        height: 2.8rem;
+                        border-radius: 50%;
+                        background-color: white;
+                        position: absolute;
+                        top: 80%;
+                        left: 85%;
+                        @include d-flex(flex,center,center);
+                        transition: .5s;
+                        z-index: -1;
+                        opacity: 0;
+                        & i{
+                            font-size: .6rem;
+                        }
+                    }
+                    &:hover::before{
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        background-color:  rgba(97, 104, 255, .8);
+                        opacity: .5;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        transition: .5s;
+                    }
+                    &:hover &_text{
+                        transition: .5s;
+                        top: 50%;
+                        z-index: 2;
+                        opacity: 1;
+                    }
+                    &:hover &_icon{
+                        left: 80%;
+                        transition: .5s;
+                        z-index: 1;
+                        opacity: 1;
+                    }
+                }
+
+            }
+        }
+        //  laptop design main section Tour
+        @media only screen and (min-width:993px) and (max-width:1199px){
+            .main_section_tour_cards{
+              justify-content: space-evenly;
+              gap:1rem;
+            }
+            .main_section_tour_cards_item{
+                max-width: 45%;
+            }
+        }
+                
+          // tablet design main section Tour 
+    @media only screen and (min-width:769px) and (max-width:992px) {
+        .main_section_tour_cards_item{
+            max-width: 100%;
+            &_img{
+                max-height: 600px;
+            }
+        }
+
+    }
+        // mobile design main section Tour 
+        @media only screen and (max-width:768px){
+            .main_section_tour_cards_item{
+                max-width: 100%;
+                &_img{
+                    max-height: 600px;
+                }
+            }
+            .body_icon{
+                display: none;
+            }
+        }
+
+        // MAIN SECTION Tour ENDED
+
+
+        // MAIN SECTION Tour STARTED
+        .main_section_package_container{
+              width: 100%;
+              padding-top: 5.8rem;
+        }
+        .main_section_package{
+            background: $bg-color;
+            &_cards{
+                width: 100%;
+                @include d-flex(flex,space-between,center);
+                padding-top: 4.5rem;
+                gap: 2rem;
+                flex-wrap: wrap;
+                &_item{
+                    max-width: 30%;
+                    margin-bottom: 50px;
+                    height: max-content;
+                    cursor: pointer;
+                    &_img{
+                        max-height: 300px;
+                        max-width: 100%;
+                        overflow: hidden;
+                        border-radius: 5px 5px 0 0;
+                        & img{
+                            max-width: 100%;
+                            border-radius: 5px 5px 0 0;
+                            display: block;
+                        }
+                    }
+                    &_text{
+                        background: $bg-color;
+                        position: relative;
+                        border: 1px solid rgb(194, 190, 190);
+                        border-radius:0 0 5px 5px;
+                        padding:2rem 3rem 2rem 2rem;
+                        &_star_icon{
+                            color: rgb(243, 208, 13);
+                            font-size: .8rem;
+                            margin-bottom: 1rem;
+                        }
+                        &_title{
+                            font-size: 1.2rem;
+                            color: $text-color-activty-card;
+                            margin-bottom: 1rem;
+                        }
+                        &_info_icon, &_info{
+                            color: $text-color-activty-card;
+                        }
+                    }
+                    &_btn{
+                        position: absolute;
+                        top:-20px;
+                        right: 10px;
+                        &_item{
+                            width: 9rem;
+                            padding: 1rem;
+                            border-radius: 3rem;
+                            border: none;
+                            background: $bg-color-btn-home;
+                            color: white;
+                            font-size: 1rem;
+                            font-weight: 400;
+                            transition: .4s;
+                        }
+                    }
+                    &:hover &_btn_item{
+                        background-color: #212a42;
+                        transition: .4s;
+                    }
+                }
+            }
+        }
+
+        //  laptop design main section Package
+        @media only screen and (min-width:993px) and (max-width:1199px){
+            .main_section_package_cards{
+              justify-content: space-evenly;
+              gap:1rem;
+            }
+            .main_section_package_cards_item{
+                max-width: 40%;
+            }
+        }
+                
+          // tablet design main section package 
+    @media only screen and (min-width:769px) and (max-width:992px) {
+        .main_section_package_cards_item{
+            max-width: 100%;
+            &_img{
+                max-height: 600px;
+            }
+        }
+
+    }
+        // mobile design main section package 
+        @media only screen and (max-width:768px){
+            .main_section_package_cards_item{
+                max-width: 100%;
+                &_img{
+                    max-height: 600px;
+                }
+            }
+            .body_icon{
+                display: none;
+            }
+        }
+
+        // MAIN SECTION Tour ENDED
+
+        // MAIN SECTION Partners STARTED
+        .main_section_partners_container{
+            padding-top: 4rem;
+            width: 100%;
+            padding-top: 50px;
+        }
+        .main_section_partners{
+            width: 100%;
+            background-image: url(photos/main_section_partners_bg.png);
+            background-color: $bg-color-btn-home;
+            &_cards{
+                @include d-flex(flex,space-between,center);
+                flex-wrap: wrap;
+                padding: 50px 80px;
+                gap: 1rem;
+               max-width:100%;
+                &_item{
+                    border-radius: 5px;
+                    max-width:14%;
+                    & img{
+                        max-width: 100%;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+
+        // tablet design main design Partners
+       @media only screen and (min-width:769px) and (max-width:992px){
+        .main_section_partners_cards_item{
+            max-width: 33%;
+            &:nth-child(4){
+                display: none;
+            }
+            &:nth-child(5){
+                display: none;
+            }
+            &:nth-child(6){
+                display: none;
+            }
+        }
+       }
+    //    mobile design main section Partners
+
+    @media only screen and (max-width:768px) {
+        .main_section_partners_cards_item{
+            max-width: 45%;
+            &:nth-child(3){
+                 display: none;
+            }
+            &:nth-child(4){
+                display: none;
+            }
+            &:nth-child(5){
+                display: none;
+            }
+            &:nth-child(6){
+                display: none;
+            }
+    }
+    .body_icon{
+        display: none;
+    }
+}
+
+// MAIN SECTION Partners ENDED
+
+// MAIN SECTION Testimonials STARTED
+
+.main_section_testimonials_container{
+    width: 100%;
+    background: $bg-color;
+    padding-top:5rem;
+}
+.main_section_testimonials{
+    width: 100%;
+    &_cards{
+        width: 100%;
+        padding-top: 8rem;
+        @include d-flex(flex,space-between,center);
+        margin-bottom: 3rem;
+        &_item{
+            background: #F4F9FF;
+            max-width: 30%;
+            text-align: center;
+            @include d-flex(flex,space-between,center);
+            flex-direction: column;
+            padding: 20px;
+            &_img{
+                width: 100px;
+                position: relative;
+                height: 100px;
+                margin-top:1.5rem;
+            &_pp{
+                max-width: 100%;
+                border-radius: 50%;
+                display: block;
+            }
+        }
+        &_content{
+            margin-top: 2rem;
+            &_text{
+                font-size:1.3rem;
+                color: $text-color-activty-card;
+                line-height: 1.3;
+            }
+        }
+        &_bottom{
+            margin-top: 2rem;
+            &_title{
+                color: $text-color-activty-card;
+                font-size: 1.4rem;
+                font-weight: 600;
+            }
+            &_position{
+                color: $text-color-activty-card;
+                font-weight: 500;
+                font-size: 1.3rem;
+                margin-top: .6rem;
+            }
+            &_icon{
+                margin-top: .6rem;
+                & i{
+                font-size: .9rem;
+            }
+        }
+        }
+        &_quotation{
+            background-color: $bg-color-btn-home;
+            @include d-flex(flex,center,center);
+            position:absolute;
+            right: 5px;
+            bottom: -10px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background-repeat: no-repeat;
+
+        }
+        }
+    }
+    &_arrows{
+        text-align: center;
+         & i{
+            color: $text-color-activty-card;
+            margin: 2px;
+            cursor: pointer;
+            font-size: 1.2rem;
+         }
+    }
+}
+// MAIN SECTION TESTIMONIALS Tablet DESIGN
+@media only screen and (min-width:769px) and (max-width:992px){
+    .main_section_testimonials_cards{
+         justify-content: center;
+        &_item{
+            max-width: 80%;
+            &:nth-child(2){
+                display: none;
+            }
+            &:nth-child(3){
+                display: none;
+            }
+        }
+    }
+    .main_section_testimonials_arrows{
+        display: none;
+    }
+    
+}
+// MAIN SECTION TESTIMONIALS Mobile DESIGN
+@media only screen and (max-width:768px){
+    .main_section_testimonials_cards{
+         justify-content: center;
+        &_item{
+            max-width: 80%;
+            &:nth-child(2){
+                display: none;
+            }
+            &:nth-child(3){
+                display: none;
+            }
+        }
+    }
+    .main_section_testimonials_arrows{
+        display: none;
+    }
+    .body_icon{
+        display: none;
+    }
+}
+
+// MAIN SECTION Testimonials ENDED
+
+// MAIN SECTION Blog STARTED
+.main_section_blog_container{
+    width: 100%;
+    background: white;
+    padding-top: 5rem;
+}
+.main_section_blog{
+width: 100%;
+&_text{
+    margin-bottom: 3rem;
+}
+&_cards{
+    max-width: 100%;
+    @include d-flex(flex,space-between,center);
+    flex-wrap: wrap;
+    gap:1rem;
+    &_item{
+        max-width: 310px;
+        border-radius: 5px;
+        &_img{
+            border-radius: 5px 5px 0px 0px;
+            max-height: 300px;
+            overflow: hidden;
+            max-width: 100%;
+            & img{
+                max-width: 100%;
+                border-radius: 5px 5px 0px 0px;
+                display: block;
+        }
+    }
+    &_bottom{
+        border: 1px solid rgb(219, 219, 219);
+        border-radius: 0px 0px 5px 5px;
+        padding: 28px;
+        border-top: none;
+        i{
+            color: $text-color-activty-card;
+        }
+        &_time{
+            margin-left: .6rem;
+            color: $text-color-activty-card;
+        }
+        &_title{
+            color: $text-color-activty-card;
+            margin-top: 1.3rem;
+            line-height: 1.5;
+            font-size: 1.2rem;
+        }
+    }
+}
+}
+}
+// MAIN SECTION BLOG Laptop DESIGN
+@media only screen and (min-width:993px) and (max-width:1199px){
+    .main_section_blog_cards_item{
+        max-width: 380px;
+    }
+}
+// MAIN SECTION BLOG Tablet DESIGN
+@media only screen and (min-width:769px) and (max-width:992px){
+    .main_section_blog_cards{
+        justify-content: center;
+        &_item{
+            max-width: 100%;
+            &_img{
+                max-height: 600px;
+            }
+    }
+    }
+}
+// MAIN SECTION BLOG Mobile DESIGN
+@media only screen and (max-width:769px){
+    .main_section_blog_cards{
+        justify-content: center;
+        &_item{
+            max-width: 100%;
+            &_img{
+                max-height: 600px;
+            }
+    }
+    }
+    .body_icon{
+        display: none;
+    }
+}
+
+// MAIN SECTION Blog ENDED
+
+// MAIN SECTION Contact STARTED
+
+.main_section_contact_container{
+    width: 100%;
+    padding-top: 5rem;
+}
+.main_section_contact{
+    width: 100%;
+    &_text{
+        width: 320px;
+        margin: auto;
+        margin-bottom: 4rem;
+    }
+    &_message_box{
+        width: 60%;
+        margin: auto;
+        background-color: #e7eff8;
+        padding: 3rem;
+        &_content{
+            @include d-flex(flex,space-between,center);
+        &_cntn{
+            border: none;
+            margin-right:1rem;
+            max-width: 45%;
+            &:last-child{
+                margin: 0;
+            }
+            & input{
+                width:100%;
+                padding: 1rem;
+                border: 1px solid white;
+                border-radius: 5px;
+                outline: none;
+            &::placeholder{
+                color: $text-color-activty-card;
+                font-size: 1rem;
+            }
+            &:focus{
+                border: 1px solid blue;
+                transition: .3s;
+            }
+        }
+        }
+    }
+   &_bottom{
+    margin-top: 1rem;
+    &_cntn{
+        max-width: 100%;
+        border: none;
+        & input{
+            width:100%;
+            padding: 1rem;
+            border: 1px solid white;
+            border-radius: 5px;
+            outline: none;
+            &::placeholder{
+                color: $text-color-activty-card;
+                font-size: 1rem;
+            }
+            &:focus{
+                border: 1px solid blue;
+                transition: .3s;
+            }
+        }
+        & textarea{
+            margin-top: 1rem;
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid white;
+            border-radius: 5px;
+            outline: none;
+            &::placeholder{
+                color: $text-color-activty-card;
+                font-size: 1rem;
+            }
+            &:focus{
+                border: 1px solid blue;
+                transition: .3s;
+            }
+
+        }
+    }
+   }
+
+   &_btn{
+       margin-top: 1rem;
+       text-align: center;
+       border: none;
+    & button{
+        padding: 1rem;
+        width: 150px;
+        border: none;
+        background-color: $bg-color-btn-home;
+        color: white;
+        border-radius: 5px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        transition: .2s;
+        cursor: pointer;
+        &:hover{
+            background-color: rgba(0, 0, 0, 0.705);
+            transition: .2s;
+        }
+    }
+   }
+}
+}
+// MAIN SECTION CONTACT Laptop DESIGN
+@media only screen and (min-width:993px) and (max-width:1199px) {
+    .main_section_contact_message_box_content{
+        display: block;
+        &_cntn{
+            max-width: 100%;
+            margin: 0;
+            margin-bottom: 1rem;
+            & input{
+                width: 100%;
+            }
+        }
+    }
+}
+// MAIN SECTION CONTACT Tablet DESIGN
+@media only screen and (min-width:769px) and (max-width:992px){
+    .main_section_contact_message_box_content{
+        display: block;
+        &_cntn{
+            max-width: 100%;
+            margin: 0;
+            margin-bottom: 1rem;
+            & input{
+                width: 100%;
+            }
+        }
+    }
+}
+// MAIN SECTION CONTACT Mobile DESIGN
+@media only screen and (max-width:769px){
+    .main_section_contact_message_box{
+        width: 90%;
+    }
+    .main_section_contact_message_box_content{
+        display: block;
+        &_cntn{
+            max-width: 100%;
+            margin: 0;
+            margin-bottom: 1rem;
+            & input{
+                width: 100%;
+            }
+        }
+    }
+    .body_icon{
+        display: none;
+    }
+}
+
+// MAIN SECTION Contact ENDED
+
+// FOOTER STARTED
+
+.footer_container{
+    margin-top: 9rem;
+    width: 100%;
+    padding: 250px 0 40px 0;
+    background-color: #00102A;
+    clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
+}
+
+
+.footer{
+    width: 100%;
+&_top{
+    margin-top: 3rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    @include d-flex(flex,space-between,center);
+    flex-wrap: wrap;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    &_info{
+        width: 240px;
+        @include d-flex(flex,_,_);
+        flex-direction: column;
+        & img{
+            width: 150px;
+            margin-bottom: 1.2rem;
+        }
+        &_items{
+            @include d-flex(flex,_,center);
+        & i,span{
+            color: whitesmoke;
+            margin-bottom: 1.2rem;
+            margin-right: 1rem;
+            display: block;
+            line-height: 1.5;
+        }
+        & i{
+            font-size: 1.3rem;
+        }
+    }
+    }
+    &_about{
+        width: 240px;
+        &_title{
+            color: whitesmoke;
+            font-size: 1.2rem;
+            margin-bottom: 1.7rem;
+            font-weight: 500;
+        }
+        &_menu_item{
+             list-style: none;
+             color: whitesmoke;
+             margin-bottom: 1rem;
+             transition: .4s;
+             cursor: pointer;
+             &:hover{
+                color:$hover-text-color;
+             }
+        }
+    }
+    &_support{
+        width: 240px;
+        &_title{
+            color: whitesmoke;
+            font-size: 1.2rem;
+            margin-bottom: 1.7rem;
+            font-weight: 500;
+        }
+        &_menu_item{
+             list-style: none;
+             color: whitesmoke;
+             margin-bottom: 1rem;
+             transition: .4s;
+             cursor: pointer;
+             &:hover{
+                color:$hover-text-color;
+             }
+        }
+    }
+    &_subscribe{
+        width: 240px;
+        &_title{
+            color: whitesmoke;
+            font-size: 1.2rem;
+            margin-bottom: 1.7rem;
+            font-weight: 500;
+        }
+        &_text{
+            color: whitesmoke;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        &_input{
+            padding: 1rem;
+            width: 100%;
+            border-radius: 5px;
+            outline: none;
+            margin-bottom: 1rem;
+            appearance: none;
+            border: none;
+            &:focus{
+                box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25);
+            }
+        }
+        &_btn{
+            border: none;
+            border-radius: 5px;
+            width: 140px;
+          padding: 1.2rem;
+          color: whitesmoke;
+          background: $bg-color-btn-home;
+          cursor: pointer;
+          transition: .2s;
+          &:hover{
+            background: $bg-color;
+            color: $text-color-activty-card;
+            transition: .2s;
+          }
+        }
+    }
+    &_hr{
+        max-width: 100%;
+        margin: auto;
+        border: 0;
+        height: 1px;
+        background:rgba(255, 255, 255, 0.233);
+    }
+}
+&_bottom{
+    margin-top: 2rem;
+    text-align: center;
+    &_title{
+        color: $text-color-main;
+        font-size: .9rem;
+        font-weight: 500;
+    }
+    &_brands{
+        margin-top: 2rem;
+        &_item{
+            font-size: 1.1rem;
+            color: $bg-color-btn-home;
+            margin-right: 1rem;
+            cursor: pointer;
+            transition: .5s;
+            &:hover{
+                transition: .5s;
+                color:$text-color-main;
+            }
+        }
+    }
+}
+}
+
+// FOOTER Laptop DESIGN
+@media only screen and (min-width:993px) and (max-width:1199px) {
+    .footer_top_subscribe{
+        width: 250px;
+        margin-top: 2rem;
+    }
+}
+// FOOTER Tablet DESIGN
+@media only screen and (min-width:769px) and (max-width:992px) {
+    .footer_container{
+        clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+    }
+.footer_top_info,.footer_top_support,.footer_top_about,.footer_top_subscribe{
+    width: 100%;
+    margin-top: 1rem;
+}
+
+}
+
+// FOOTER Mobile DESIGN
+@media only screen and (max-width:769px){
+    .footer_top_info,.footer_top_support,.footer_top_contact,.footer_top_subscribe{
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .footer_container{
+        clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+    }
+    .body_icon{
+        display: none;
+    }
+}
+
+//  FOOTER ENDED
+
+.spin{
+    position: fixed;
+    text-align: center;
+    background-color:$bg-color-btn-home;
+    top: 30%;
+    left: 0;
+    border-radius: 0 5px 5px 0;
+    &_item{
+        padding: .7rem;
+        color:$text-color-main;
+        font-size: 1.5rem;
+        animation-name: spin;
+        animation-duration:2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+}
+}
+@keyframes spin {
+    0%{
+        transform: rotate(0);
+    }
+   100%{ 
+    transform: rotate(360deg);
+   }
+}
+.rocket{
+    position: fixed;
+    transition-duration: 1.5s;
+    right: 20px;
+    top:90%;
+    animation-name: rocket;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: unset;
+     i{
+        padding: 14px;
+        font-size: 1.2rem;
+        background-color: $bg-color-btn-home;
+        border-radius: 50%;
+        color: $text-color-main;
+        cursor: pointer;
+        &:hover{
+        background-color: #212a42;
+        }
+     }
+
+}
+@keyframes rocket {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
