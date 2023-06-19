@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    width: 400px;
+    height: 200px;
+}
+.btn{
+    padding: 15px;
+    cursor: pointer;
+    background: gray;
+    color: white;
+    margin: 50px;
+}
+.btnCntr{
+    padding: 15px;
+    cursor: pointer;
+    background:wheat;
+    color: rgb(207, 5, 5);
+    margin: 50px;
+}
+.cntrDsp{
+    padding: 15px;
+    background:wheat;
+    color: rgb(207, 5, 5);
+    margin-left :20px;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+}
+.imgBtn{
+    padding: 15px;
+    background:whitesmoke;
+    color: blue;
+    margin-left :20px;
+    text-align: center;
+}
+.img_cntr{
+    display: flex;
+    align-items: center;
+}
