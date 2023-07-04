@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: space-around;
+    background-color: aqua;
+    margin-top: 2rem
+}
+table,tr,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align:center;
+}
+input{
+    display: block;
+    padding: 1rem;
+    width: 150px;
+    outline: none;
+    margin-bottom: 1rem;
+}
+.btn{
+    padding: .5rem;
+    cursor: pointer;
+}
