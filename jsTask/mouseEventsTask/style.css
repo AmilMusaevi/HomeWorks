@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.mainCntnr {
+  background: white;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0px 60px;
+}
+.titleCntnr {
+  margin: 50px;
+}
+.title {
+  font-size: 4.5rem;
+  color: #1e1e2f;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+}
+.goInputCntnr {
+  width: 440px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+}
+.goInput {
+  width: 320px;
+  height: 120px;
+  border: 1px solid white;
+  padding: 2rem;
+  outline: none;
+  font-size: 1.5rem;
+  transition: 0.5s;
+}
+.goInput:hover {
+  box-shadow: 0 46px 50px 0 rgba(0, 0, 0, 0.03);
+}
+.goInput::placeholder {
+  font-size: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.goInput:focus {
+  border: 1px solid #97c680;
+  transition: 0.5s;
+}
+.goBbtn {
+  height: 120px;
+  width: 120px;
+  border: none;
+  background-color: #97c680;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+.goBbtn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  z-index: -1;
+  transition: all 0.5s;
+}
+.goBbtn:hover::before {
+  content: "";
+  position: absolute;
+  height: 120px;
+  background-color: #feba88;
+  z-index: -1;
+  transition: all 0.5s;
+}
+.goBtnText {
+  color: #1e1e2f;
+  font-size: 39px;
+}
+.cardsCntnr {
+  display: flex;
+  flex: 1;
+  gap: 2rem;
+  padding-left: 50px;
+}
+.imgCntnr {
+  flex: 4;
+  height: 550px;
+  cursor: pointer;
+  transition: all 0.5s;
+  animation-timing-function: linear;
+}
+.imgCntnr img {
+  max-width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  height: 100%;
+}
+.active {
+  flex: 1.5;
+  transition: 0.5s;
+}
